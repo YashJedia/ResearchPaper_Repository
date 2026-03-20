@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', Georgia, serif;
+  background-color: #F5F0E6;
+  color: #1B3A2F;
+}
+
+a {
+  text-decoration: none;
+  color: #C2A878;
+}
+
+a:hover {
+  color: #1B3A2F;
+}
+
+@layer utilities {
+  .prose-lg {
+    @apply text-lg leading-relaxed;
+  }
+
+  .btn-primary {
+    @apply px-6 py-2 bg-dark-green text-beige rounded hover:bg-gold hover:text-dark-green transition;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2 bg-gold text-dark-green rounded hover:bg-dark-green hover:text-beige transition;
+  }
+
+  .card {
+    @apply bg-white shadow-lg p-6 rounded border-l-4 border-gold;
+  }
+
+  .heading-1 {
+    @apply text-4xl font-serif font-bold text-dark-green mb-4;
+  }
+
+  .heading-2 {
+    @apply text-3xl font-serif font-bold text-dark-green mb-3;
+  }
+
+  .heading-3 {
+    @apply text-2xl font-serif font-bold text-dark-green mb-2;
+  }
+}

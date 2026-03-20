@@ -1,0 +1,81 @@
+Create a full-stack MERN application called "SCSS Research Archive" with a Service-Oriented Architecture (SOA) approach.
+
+Project Description:
+This is a web application for students to view research papers published by faculty of a university department. The system should store only metadata of research papers (title, author, year, journal, abstract, link) and provide links to original sources.
+
+Tech Stack:
+- Frontend: React (Vite), Axios, React Router, Tailwind CSS
+- Backend: Node.js, Express.js
+- Database: MongoDB (Mongoose)
+- Authentication: JWT + bcrypt
+
+Backend Requirements:
+1. Setup Express server with MongoDB connection.
+2. Create models:
+   - User (username, password, role)
+   - Faculty (name, designation, email, researchArea, bio, photo)
+   - Paper (title, author, year, journal, doi, link, abstract, researchArea, facultyId)
+
+3. Create services/routes:
+   - Auth Service:
+     POST /api/auth/login (JWT authentication)
+   - Faculty Service:
+     CRUD operations for faculty
+   - Paper Service:
+     CRUD operations for research papers
+     Search endpoint: /api/papers/search?q=keyword
+   - Use middleware to protect admin routes
+
+4. Implement JWT authentication middleware.
+
+5. Use proper MVC structure:
+   - models
+   - routes
+   - controllers
+   - middleware
+
+Frontend Requirements:
+1. Create React app using Vite.
+2. Pages:
+   - Home: list all research papers
+   - Faculty: list all faculty
+   - Faculty Profile: show faculty details + their papers
+   - Login (Admin)
+   - Dashboard (Admin)
+   - Add Paper (Admin)
+
+3. Features:
+   - Fetch and display papers using Axios
+   - Search papers
+   - Filter by research area and year
+   - Admin login and token storage
+   - Protected routes for admin pages
+   - Add/Edit/Delete paper (admin only)
+
+4. UI Design:
+   Use an "old money" classic academic theme:
+   - Colors: dark green (#1B3A2F), beige (#F5F0E6), gold (#C2A878)
+   - Fonts: serif (Playfair Display or Georgia)
+   - Clean, minimal, elegant university-style layout
+
+5. Use Tailwind CSS for styling.
+
+Extra Features:
+- Show analytics like number of papers per research area
+- Show latest publications
+- Create reusable components
+
+Code Requirements:
+- Clean and modular code
+- Proper folder structure (backend and frontend)
+- Use async/await and error handling
+- Use best practices
+
+Generate:
+- Complete backend code
+- Complete frontend code
+- Folder structure
+- API integration
+- Basic styling
+
+Make sure everything is working and connected properly.
