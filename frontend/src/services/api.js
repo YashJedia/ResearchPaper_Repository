@@ -24,6 +24,15 @@ export const authAPI = {
   register: (username, password) => api.post('/auth/register', { username, password }),
 };
 
+// Faculty Auth endpoints
+export const facultyAuthAPI = {
+  register: (data) => api.post('/faculty-auth/register', data),
+  login: (email, password) => api.post('/faculty-auth/login', { email, password }),
+  getProfile: () => api.get('/faculty-auth/profile'),
+  updateProfile: (data) => api.put('/faculty-auth/profile', data),
+  getMyPapers: () => api.get('/faculty-auth/my-papers'),
+};
+
 // Faculty endpoints
 export const facultyAPI = {
   getAll: () => api.get('/faculty'),
@@ -31,6 +40,14 @@ export const facultyAPI = {
   create: (data) => api.post('/faculty', data),
   update: (id, data) => api.put(`/faculty/${id}`, data),
   delete: (id) => api.delete(`/faculty/${id}`),
+};
+
+// Admin Faculty Management endpoints
+export const adminFacultyAPI = {
+  getPendingRegistrations: () => api.get('/admin/faculty/registrations/pending'),
+  getAllRegistrations: () => api.get('/admin/faculty/registrations'),
+  approveFaculty: (id) => api.put(`/admin/faculty/registrations/${id}/approve`),
+  rejectFaculty: (id, reason) => api.put(`/admin/faculty/registrations/${id}/reject`, { reason }),
 };
 
 // Paper endpoints

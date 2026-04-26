@@ -5,6 +5,8 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/auth.js';
 import facultyRoutes from './routes/faculty.js';
 import paperRoutes from './routes/paper.js';
+import facultyAuthRoutes from './routes/facultyAuth.js';
+import adminFacultyRoutes from './routes/adminFaculty.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -22,6 +24,8 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/faculty', facultyRoutes);
 app.use('/api/papers', paperRoutes);
+app.use('/api/faculty-auth', facultyAuthRoutes);
+app.use('/api/admin/faculty', adminFacultyRoutes);
 
 // Error handling middleware
 app.use(errorHandler);

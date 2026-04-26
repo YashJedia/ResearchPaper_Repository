@@ -54,13 +54,25 @@ export const searchPapers = async (req, res) => {
 
 export const createPaper = async (req, res) => {
   try {
-    const { title, author, year, journal, doi, link, abstract, researchArea, facultyId } = req.body;
+    const { title, authors, author, year, journal, doi, link, abstract, researchArea, facultyId } = req.body;
+    const authorField = authors || author;
 
-    if (!title || !author || !year || !journal || !link || !researchArea || !facultyId) {
+    if (!title || !authorField || !year || !journal || !researchArea || !facultyId) {
       return res.status(400).json({ message: 'Required fields are missing' });
     }
 
-    const paper = new Paper({ title, author, year, journal, doi, link, abstract, researchArea, facultyId });
+    const paper = new Paper({ 
+      title, 
+      author: authorField,
+      authors: authorField,
+      year, 
+      journal, 
+      doi, 
+      link, 
+      abstract, 
+      researchArea, 
+      facultyId 
+    });
     await paper.save();
     await paper.populate('facultyId');
 
@@ -73,11 +85,23 @@ export const createPaper = async (req, res) => {
 export const updatePaper = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, author, year, journal, doi, link, abstract, researchArea, facultyId } = req.body;
+    const { title, authors, author, year, journal, doi, link, abstract, researchArea, facultyId } = req.body;
+    const authorField = authors || author;
 
     const paper = await Paper.findByIdAndUpdate(
       id,
-      { title, author, year, journal, doi, link, abstract, researchArea, facultyId },
+      { 
+        title, 
+        author: authorField,
+        authors: authorField,
+        year, 
+        journal, 
+        doi, 
+        link, 
+        abstract, 
+        researchArea, 
+        facultyId 
+      },
       { new: true, runValidators: true }
     ).populate('facultyId');
 

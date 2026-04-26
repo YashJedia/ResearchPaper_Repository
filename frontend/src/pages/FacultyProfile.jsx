@@ -79,7 +79,7 @@ const FacultyProfile = () => {
           <div className="flex-1">
             <h1 className="heading-1 mb-2">{faculty.name}</h1>
             <p className="text-xl text-gold font-semibold mb-2">{faculty.designation}</p>
-            <p className="text-lg mb-4 font-serif text-dark-green">{faculty.researchArea}</p>
+            <p className="text-lg mb-4 font-sans text-dark-green">{faculty.researchArea}</p>
             <a href={`mailto:${faculty.email}`} className="text-gold hover:text-dark-green block mb-4">
               {faculty.email}
             </a>

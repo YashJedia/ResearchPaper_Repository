@@ -9,7 +9,10 @@ const paperSchema = new mongoose.Schema(
     },
     author: {
       type: String,
-      required: true,
+      trim: true,
+    },
+    authors: {
+      type: String,
       trim: true,
     },
     year: {
@@ -27,7 +30,6 @@ const paperSchema = new mongoose.Schema(
     },
     link: {
       type: String,
-      required: true,
     },
     abstract: {
       type: String,
@@ -35,7 +37,6 @@ const paperSchema = new mongoose.Schema(
     },
     researchArea: {
       type: String,
-      required: true,
       trim: true,
     },
     facultyId: {

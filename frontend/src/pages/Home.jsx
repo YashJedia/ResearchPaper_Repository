@@ -81,7 +81,7 @@ const Home = () => {
             <h3 className="heading-3">Total Papers</h3>
             <p className="text-4xl font-bold">{analytics.totalPapers}</p>
           </div>
-          <div className="card bg-dark-green text-beige">
+          <div className="card bg-gold text-dark-green">
             <h3 className="heading-3">Research Areas</h3>
             <p className="text-4xl font-bold">{analytics.papersByArea.length}</p>
           </div>

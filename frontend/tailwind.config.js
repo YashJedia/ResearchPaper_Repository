@@ -11,6 +11,7 @@ module.exports = {
         'gold': '#C2A878',
       },
       fontFamily: {
+        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
         serif: ['Playfair Display', 'Georgia', 'serif'],
       },
     },

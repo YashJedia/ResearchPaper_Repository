@@ -14,7 +14,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
   return (
     <header className="bg-dark-green text-beige py-6 shadow-lg">
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="heading-2 text-beige hover:text-gold">
+        <Link to="/" className="heading-2 !text-gold">
           SCSS Research Archive
         </Link>
         <nav className="flex gap-8 items-center">
