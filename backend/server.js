@@ -22,6 +22,7 @@ const corsOptions = {
     'http://localhost:5173',
     'http://localhost:3000',
     'http://localhost:3001',
+    'https://research-paper-repository-seven.vercel.app',
     'https://researchpaper-repository-backend.onrender.com'
   ],
   credentials: true,
