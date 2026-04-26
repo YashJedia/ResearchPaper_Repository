@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authAPI, facultyAuthAPI } from '../services/api';
+import PhotoUpload from '../components/PhotoUpload';
 
 const Login = ({ onLoginSuccess }) => {
   const navigate = useNavigate();
@@ -455,15 +456,14 @@ const Login = ({ onLoginSuccess }) => {
 
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">
-                        Photo URL
+                        Photo
                       </label>
-                      <input
-                        type="url"
-                        name="photo"
-                        value={facultyRegisterForm.photo}
-                        onChange={handleFacultyRegisterChange}
-                        placeholder="https://example.com/photo.jpg"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gold text-sm"
+                      <PhotoUpload
+                        onPhotoUrlChange={(url) =>
+                          setFacultyRegisterForm((prev) => ({ ...prev, photo: url }))
+                        }
+                        currentPhotoUrl={facultyRegisterForm.photo}
+                        label="Upload Photo"
                       />
                     </div>
 

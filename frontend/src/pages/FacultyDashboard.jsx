@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { facultyAuthAPI, paperAPI } from '../services/api';
 import PaperCard from '../components/PaperCard';
+import PhotoUpload from '../components/PhotoUpload';
 
 const FacultyDashboard = () => {
   const navigate = useNavigate();
@@ -463,13 +464,13 @@ const FacultyDashboard = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">Photo URL</label>
-                <input
-                  type="url"
-                  name="photo"
-                  value={formData.photo}
-                  onChange={handleProfileChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gold"
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Photo</label>
+                <PhotoUpload
+                  onPhotoUrlChange={(url) =>
+                    setFormData((prev) => ({ ...prev, photo: url }))
+                  }
+                  currentPhotoUrl={formData.photo}
+                  label="Upload Photo"
                 />
               </div>
 

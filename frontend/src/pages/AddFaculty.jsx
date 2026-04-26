@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { facultyAPI } from '../services/api';
+import PhotoUpload from '../components/PhotoUpload';
 
 const AddFaculty = () => {
   const navigate = useNavigate();
@@ -141,14 +142,14 @@ const AddFaculty = () => {
 
           <div className="mb-6">
             <label className="block text-dark-green font-semibold mb-2">
-              Photo URL
+              Photo
             </label>
-            <input
-              type="url"
-              name="photo"
-              value={formData.photo}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-gold rounded focus:outline-none focus:ring-2 focus:ring-dark-green"
+            <PhotoUpload
+              onPhotoUrlChange={(url) =>
+                setFormData((prev) => ({ ...prev, photo: url }))
+              }
+              currentPhotoUrl={formData.photo}
+              label="Upload Photo"
             />
           </div>
 
